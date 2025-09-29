@@ -15,7 +15,7 @@ const Index = () => {
         
         {/* Navigation Tabs */}
         <NavigationTabs />
-        
+
         {/* Main Game Interface */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Main Thread Section */}
@@ -32,22 +32,31 @@ const Index = () => {
               pants={{ name: item.cards[2].name, stats: "+"+ item.cards[2].defend +" 防禦" }} 
             />
           </div>
-          
-          {/* Player 2 Stats & Equipment */}
           <div className="lg:col-span-1 space-y-4">
             <PlayerStats attack={130} defense={140} money={1800} title={"Mage"} picture={"assets/pictures/mage.png"}/>
             <Equipment 
-              weapon={{ name: "武器", stats: "+40 攻擊" }} 
-              armor={{ name: "鎧甲", stats: "+35 防禦" }} 
-              pants={{ name: "褲子", stats: "+25 防禦" }} 
+              weapon={{ name: item.cards[0].name, stats: "+"+ item.cards[0].attack +" 攻擊" }}
+              armor={{ name: item.cards[1].name, stats: "+"+ item.cards[1].defend +" 防禦" }}
+              pants={{ name: item.cards[2].name, stats: "+"+ item.cards[2].defend +" 防禦" }}
             />
           </div>
-          
-          {/* Dice Section */}
-          <div className="lg:col-span-1">
-            <DiceSection />
+          <div className="lg:col-span-1 space-y-4">
+            <PlayerStats attack={130} defense={140} money={1800} title={"Assassin"} picture={"assets/pictures/assassin.png"}/>
+            <Equipment 
+              weapon={{ name: item.cards[0].name, stats: "+"+ item.cards[0].attack +" 攻擊" }}
+              armor={{ name: item.cards[1].name, stats: "+"+ item.cards[1].defend +" 防禦" }}
+              pants={{ name: item.cards[2].name, stats: "+"+ item.cards[2].defend +" 防禦" }}
+            />
           </div>
+
+          {/* Dice Section */}
+          {/* <div className="lg:col-span-1">
+            <DiceSection />
+          </div> */}
         </div>
+
+
+        
       </div>
     </div>
   );
